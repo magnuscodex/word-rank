@@ -9,8 +9,6 @@ class Fixnum
     end
     return f
   end
-
-  alias_method :!, :factorial
 end
 
 # A class for scoring words within a given alphabet.
@@ -48,7 +46,7 @@ class WordScore
     # For each position in the word find the number of words that are
     # before word being ranked given the prior letters.
     for i in (0...word.size)
-      ind = alph.index(word[i])
+      ind = alph.index(word[i,1])
       prior = 0
 
       # Count possible words starting with earlier letters in the alphabet
